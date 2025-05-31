@@ -1,14 +1,14 @@
 <?xml version="1.0" standalone="no" ?>
 <ExternPluginMaker>
     <LastBuildFile></LastBuildFile>
-    <LinuxFilename>/home/paul/Dropbox/Projects/WhippyTermPlugin_RTT/Linux/SEGGER_RTT.so</LinuxFilename>
-    <WindowsFilename></WindowsFilename>
+    <LinuxFilename></LinuxFilename>
+    <WindowsFilename>C:/sandboxes/WhippyTermPlugin_SEGGER_RTT/Win/SEGGER_RTT.dll</WindowsFilename>
     <MacFilename></MacFilename>
     <RPI64Filename></RPI64Filename>
     <RPI32Filename></RPI32Filename>
     <PluginName>SEGGER RTT</PluginName>
     <InstallFilename>SEGGER_RTT</InstallFilename>
-    <Description>A plugin to use SEGGER&#226;&#128;&#153;s Real Time Terminal (RTT).  RTT is a technology for interactive user I/O in embedded applications.</Description>
+    <Description>A plugin to use SEGGER&amp;#226;&amp;#128;&amp;#153;s Real Time Terminal (RTT).  RTT is a technology for interactive user I/O in embedded applications.</Description>
     <Contributors>Paul Hutchinson</Contributors>
     <Copyright>2025</Copyright>
     <ReleaseDate>25 May 2025</ReleaseDate>
