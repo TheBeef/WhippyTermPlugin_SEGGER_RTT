@@ -51,7 +51,7 @@ using namespace std;
 /*** DEFINES                  ***/
 #define SEGGER_RTT_URI_PREFIX                   "RTT"
 #define REGISTER_PLUGIN_FUNCTION_PRIV_NAME      SEGGER_RTT  // The name to append on the RegisterPlugin() function for built in version
-#define NEEDED_MIN_API_VERSION                  0x01000000
+#define NEEDED_MIN_API_VERSION                  0x01000400
 
 #define TARGETHISTORY_SIZE                      5
 
@@ -134,24 +134,11 @@ const struct IODriverAPI g_SEGGERRTTPluginAPI=
 struct IODriverInfo m_SEGGERRTTInfo=
 {
     0,
-    "<h3>FORMAT</h3>"
-    "<p style='margin-left:60px;text-indent: -30px;'>"
-    "RTT://[SerialNumber][:USBAddress]/[TargetDeviceType]<br/>"
-    "</p>"
-    "<h3>WHERE</h3>"
-    "<p style='margin-left:60px;text-indent: -30px;'>"
-    "SerialNumber -- The serial number of the J-Link debug probe<br/>"
-    "</p>"
-    "<p style='margin-left:60px;text-indent: -30px;'>"
-    "USBAddress -- If using an older-J-Link you need to provide the USBaddress as the Serial Number will always be 123456<br/>"
-    "</p>"
-    "<p style='margin-left:60px;text-indent: -30px;'>"
-    "TargetDeviceType -- The type of target that will be connected to the JLink<br/>"
-    "</p>"
-    "<h3>EXAMPLE</h3>"
-    "<p style='margin-left:60px;text-indent: -30px;'>"
-    "RTT://158007529/CS32F103C8"
-    "</p>"
+    "<URI>RTT://[SerialNumber][:USBAddress]/[TargetDeviceType]</URI>"
+    "<ARG>SerialNumber -- The serial number of the J-Link debug probe</ARG>"
+    "<ARG>USBAddress -- If using an older-J-Link you need to provide the USBaddress as the Serial Number will always be 123456</ARG>"
+    "<ARG>TargetDeviceType -- The type of target that will be connected to the JLink</ARG>"
+    "<Example>RTT://158007529/CS32F103C8</Example>"
 };
 
 const struct IOS_API *g_SRTT_IOSystem;
