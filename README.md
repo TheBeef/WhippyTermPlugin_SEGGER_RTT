@@ -6,7 +6,8 @@ RTT is a technology for interactive user I/O in embedded applications
 (https://www.segger.com/products/debug-probes/j-link/technology/about-real-time-transfer/).
 
 # Installing
-Download the plugin, start WhippyTerm and Plugins->Install Plugin menu item.  Select the .wtp file and click open.
+Download the plugin, start WhippyTerm and select the "Plugins->Install Plugin" menu item.
+Select the .wtp file and click open.
 
 You must have the JLink tools installed for the plugin to work.  You can go to https://www.segger.com/downloads/jlink/
 to download and install the needed tools.
