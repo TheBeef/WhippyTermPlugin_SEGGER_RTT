@@ -15,3 +15,7 @@ to download and install the needed tools.
 When the plugin is started (when WhippyTerm loads) it will search for the .dll (or .so).  On Linux it will try to
 load /opt/SEGGER/JLink/libjlinkarm.so.  On Windows it will search for one in xxxxxxxxxxx
 
+# RTT
+This plugin will use the JLink library to search for any local JLink debuggers (on USB and the local subnet) and
+will add them to the new connections dialog.  This plugin the will read and write to Buffer Index 0.
+
