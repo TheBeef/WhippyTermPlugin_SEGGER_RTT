@@ -699,3 +699,43 @@ static DWORD WINAPI SEGGER_RTT_OS_PollThread(LPVOID lpParameter)
 
     return 0;
 }
+
+/*******************************************************************************
+ * NAME:
+ *    SEGGER_RTT_GetLastErrorMessage
+ *
+ * SYNOPSIS:
+ *    const char *SEGGER_RTT_GetLastErrorMessage(t_DriverIOHandleType *DriverIO);
+ *
+ * PARAMETERS:
+ *    DriverIO [I] -- The handle to this connection
+ *
+ * FUNCTION:
+ *    This function is optional.
+ *
+ *    This function gets info about the last error.  If there wasn't an error
+ *    or no error info is available then this function returns NULL.
+ *
+ * RETURNS:
+ *    A static buffer with the error message in it.  This buffer must remain
+ *    valid until another call to the driver (at which point it can be free'ed
+ *    for overriden).
+ *
+ *    If there isn't an error or an error message could not be built then
+ *    this function can return NULL.
+ *
+ * API VERSION:
+ *    2
+ *
+ * SEE ALSO:
+ *    
+ ******************************************************************************/
+const char *SEGGER_RTT_GetLastErrorMessage(t_DriverIOHandleType *DriverIO)
+{
+    struct SEGGER_RTT_OurData *OurData=(struct SEGGER_RTT_OurData *)DriverIO;
+
+    if(OurData->CommonData.LastErrorMsg=="")
+        return NULL;
+
+    return OurData->CommonData.LastErrorMsg.c_str();
+}

@@ -252,6 +252,7 @@ PG_BOOL SEGGER_RTT_Commom_Open(t_DriverIOHandleType *DriverIO,
     const char *TargetIDStr;
     const char *TargetInterfaceStr;
     const char *TargetSpeedStr;
+    const char *ScriptFileStr;
     const char *RTTCtrlBlockModeStr;
     const char *RTTAddressStr;
     const char *JTAGScanChainStr;
@@ -274,6 +275,7 @@ PG_BOOL SEGGER_RTT_Commom_Open(t_DriverIOHandleType *DriverIO,
         CommonData->LastErrorMsg="";
 
         TargetIDStr=g_SRTT_System->KVGetItem(Options,"TargetID");
+        ScriptFileStr=g_SRTT_System->KVGetItem(Options,"ScriptFile");
         TargetInterfaceStr=g_SRTT_System->KVGetItem(Options,"TargetInterface");
         TargetSpeedStr=g_SRTT_System->KVGetItem(Options,"TargetSpeed");
         RTTCtrlBlockModeStr=g_SRTT_System->KVGetItem(Options,"RTTCtrlBlockMode");
@@ -345,6 +347,14 @@ PG_BOOL SEGGER_RTT_Commom_Open(t_DriverIOHandleType *DriverIO,
         }
         BeenOpened=true;
 
+//        /* Do the project file (we don't actually support this) */
+//        if(ProjectFileStr!=NULL && *ProjectFileStr!=0)
+//        {
+//            Cmd="ProjectFile = ";
+//            Cmd+=ProjectFileStr;
+//            g_SRTT_JLinkAPI.ExecCommand(Cmd.c_str(),NULL,0);
+//        }
+
         /* JLinkRTTViewer does this so we do too :) */
         g_SRTT_JLinkAPI.ExecCommand("SetSkipInitECCRAMOnConnect = 1",NULL,0);
 
@@ -352,6 +362,14 @@ PG_BOOL SEGGER_RTT_Commom_Open(t_DriverIOHandleType *DriverIO,
         Cmd="device = ";
         Cmd+=TargetIDStr;
         g_SRTT_JLinkAPI.ExecCommand(Cmd.c_str(),NULL,0);
+
+        /* Set the script file (untested) */
+        if(ScriptFileStr!=NULL && *ScriptFileStr!=0)
+        {
+            Cmd="ScriptFile = ";
+            Cmd+=ScriptFileStr;
+            g_SRTT_JLinkAPI.ExecCommand(Cmd.c_str(),NULL,0);
+        }
 
         g_SRTT_JLinkAPI.TIF_Select(atoi(TargetInterfaceStr));
         g_SRTT_JLinkAPI.SetSpeed(strtol(TargetSpeedStr,NULL,10));

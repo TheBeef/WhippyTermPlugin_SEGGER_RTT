@@ -128,7 +128,7 @@ const struct IODriverAPI g_SEGGERRTTPluginAPI=
     SEGGER_RTT_ConnectionAuxCtrlWidgets_FreeWidgets,
 
     /********* Start of IODRIVER_API_VERSION_2 *********/
-//    Comport_GetLastErrorMessage,
+    SEGGER_RTT_GetLastErrorMessage,
 };
 
 struct IODriverInfo m_SEGGERRTTInfo=

@@ -170,6 +170,7 @@ PG_BOOL SEGGER_RTT_ChangeOptions(t_DriverIOHandleType *DriverIO,
         const t_PIKVList *Options);
 void SEGGER_RTT_ConnectionAuxCtrlWidgets_FreeWidgets(t_DriverIOHandleType *DriverIO,t_WidgetSysHandle *WidgetHandle,t_ConnectionWidgetsType *ConAuxCtrls);
 t_ConnectionWidgetsType *SEGGER_RTT_ConnectionAuxCtrlWidgets_AllocWidgets(t_DriverIOHandleType *DriverIO,t_WidgetSysHandle *WidgetHandle);
+const char *SEGGER_RTT_GetLastErrorMessage(t_DriverIOHandleType *DriverIO);
 
 void SEGGER_RTT_AppendFilename2Path(std::string &FullPath,const char *Path,const char *File);
 
